@@ -1,0 +1,26 @@
+edit_profile_screen.dart ~/Downloads/KhalfanQuran/flutter_app/lib/screens/profile 99 problems
+• Target of URI doesn't exist: 'package:khalfan_center/utils/validators.dart'.:8
+® Target of URI doesn't exist: 'package:khalfan_center/widgets/custom_button.dart'. :9
+O Target of URI doesn't exist: 'package:khalfan_center/widgets/custom_text_field.dart'. :10
+© Target of URI doesn't exist: 'package:image_picker/image_picker.dart'. :11
+• The method 'LoadUserProfileEvent' isn't defined for the type '_EditProfileScreenState'. :43
+• Undefined class 'ImageSource'. :47
+• The method 'ImagePicker' isn't defined for the type '_EditProfileScreenState'.:49
+© Undefined name 'ImageSource'. :89
+• Undefined name 'ImageSource'. :116
+• The property 'isNotEmpty' can't be unconditionally accessed because the receiver can be 'null'. :141
+• The method 'UpdateUserProfileEvent' isn't defined for the type '_EditProfileScreenState'. :169
+© The method 'UpdateUserProfilelmageEvent' isn't defined for the type ' EditProfileScreenState'. :179
+@ The name 'UserState' isn't a type, so it can't be used as a type argument. :195
+• The name 'UserLoading' isn't defined, so it can't be used in an 'is' expression. :197
+• The name 'UserError' isn't defined, so it can't be used in an 'is' expression. :203
+• The name 'UserLoaded' isn't defined, so it can't be used in an 'is' expression. :209
+• The getter 'fullName' isn't defined for the type 'UserModel. :214
+• The argument type 'Object?' can't be assigned to the parameter type ImageProvider<Object>?. :239
+• The property 'isNotEmpty' can't be unconditionally accessed because the receiver can be 'null'. :241
+• The argument type 'String?' can't be assigned to the parameter type 'String'. :242
+• The property 'isEmpty' can't be unconditionally accessed because the receiver can be 'null'. :244
+• The method 'CustomTextField' isn't defined for the type '_EditProfileScreenState'. :282
+• Undefined name 'Validators'. :287
+• The method 'CustomTextField' isn't defined for the type '_EditProfileScreenState'. :291
+• Undefined name 'Validators'. :297

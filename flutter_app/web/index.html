@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="تطبيق مركز خلفان لتحفيظ القرآن الكريم">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="مركز خلفان">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>مركز خلفان لتحفيظ القرآن الكريم</title>
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Firebase configuration -->
+  <script>
+    // Load environment variables
+    function loadEnvFromServer() {
+      return fetch('/env.js')
+        .then(response => response.text())
+        .then(script => {
+          // Create a script element and append it to the document
+          const scriptElement = document.createElement('script');
+          scriptElement.textContent = script;
+          document.head.appendChild(scriptElement);
+          return true;
+        })
+        .catch(error => {
+          console.error('Failed to load environment variables:', error);
+          return false;
+        });
+    }
+
+    // Initialize Firebase configuration
+    window.firebaseConfig = {
+      apiKey: "", 
+      projectId: "",
+      appId: "",
+      authDomain: "",
+      storageBucket: "",
+      messagingSenderId: "215540613"
+    };
+    
+    // This will be called after environment variables are loaded
+    function updateFirebaseConfig() {
+      if (typeof VITE_FIREBASE_API_KEY !== 'undefined') {
+        window.firebaseConfig.apiKey = VITE_FIREBASE_API_KEY;
+      }
+      if (typeof VITE_FIREBASE_PROJECT_ID !== 'undefined') {
+        window.firebaseConfig.projectId = VITE_FIREBASE_PROJECT_ID;
+        window.firebaseConfig.authDomain = VITE_FIREBASE_PROJECT_ID + ".firebaseapp.com";
+        window.firebaseConfig.storageBucket = VITE_FIREBASE_PROJECT_ID + ".appspot.com";
+      }
+      if (typeof VITE_FIREBASE_APP_ID !== 'undefined') {
+        window.firebaseConfig.appId = VITE_FIREBASE_APP_ID;
+      }
+      console.log("Firebase configuration updated");
+    }
+    
+    // Firebase will be initialized from Dart code
+  </script>
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      z-index: 9999;
+    }
+    
+    .loading-content {
+      text-align: center;
+    }
+    
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(0, 128, 0, 0.2);
+      border-top: 5px solid #008000;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Indicator -->
+  <div class="loading" id="loading">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <h2>جاري تحميل التطبيق...</h2>
+      <p>مركز خلفان لتحفيظ القرآن الكريم</p>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function() {
+      // Hide loading indicator when Flutter is initialized
+      window.addEventListener('flutter-first-frame', function() {
+        var loadingIndicator = document.getElementById('loading');
+        if (loadingIndicator) {
+          loadingIndicator.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+  <script src="flutter.js" defer></script>
+  <script>
+    window.addEventListener('load', function(ev) {
+      // First, try to load environment variables
+      loadEnvFromServer().catch(() => {
+        console.log('Unable to load environment variables from server, using defaults');
+      }).finally(() => {
+        // Update Firebase config with any environment variables that were loaded
+        updateFirebaseConfig();
+        
+        // Now initialize Flutter
+        _flutter.loader.load({
+          // No service worker needed for this demo
+        }).then(function(engineInitializer) {
+          return engineInitializer.initializeEngine();
+        }).then(function(appRunner) {
+          return appRunner.runApp();
+        }).catch(function(error) {
+          console.error('Failed to initialize Flutter application:', error);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+student_details_screen.dart ~/Downloads/KhalfanQuran/flutter_app/lib/screens/parent 140 problems
+© Target of URI doesn't exist: 'package:khalfan_center/widgets/custom_button.dart'. :7
+• Target of URI doesn't exist: 'package:khalfan_center/widgets/progress_card.dart'.:8
+® Target of URI doesn't exist: 'package:khalfan_center/widgets/attendance_card.dart'. :9
+• The method 'LoadStudentProgressEvent' isn't defined for the type '_StudentDetailsScreenState'. :44
+• The method 'LoadStudentAttendanceEvent' isn't defined for the type '_StudentDetailsScreenState'. :45
+• The method 'LoadStudentRequestsEvent' isn't defined for the type '_StudentDetailsScreenState'. :49
+• The property 'isNotEmpty' can't be unconditionally accessed because the receiver can be 'null'. :70
+• The argument type 'String?' can't be assigned to the parameter type 'String'. :71
+• The property 'isEmpty' can't be unconditionally accessed because the receiver can be 'null'. :73
+• The getter 'fullName' isn't defined for the type 'StudentModel'. :79
+• The getter 'circleName' isn't defined for the type 'StudentModel'. :86
+® The method 'getAge' isn't defined for the type 'StudentModel'. :97
+® The getter 'registrationDate' isn't defined for the type 'StudentModel. :102
+® The getter 'registrationDate' isn't defined for the type 'StudentModel. :102
+® The getter 'registrationDate' isn't defined for the type 'StudentModel. :102
+The method 'CustomButton' isn't defined for the type '_StudentDetailsScreenState'. :176
+The method 'CustomButton' isn't defined for the type '_StudentDetailsScreenState'. :190
+• The name 'StudentState' isn't a type, so it can't be used as a type argument. :214
+• The name 'StudentProgressLoaded' isn't defined, so it can't be used in an 'is' expression. :216
+• The method 'ProgressCard' isn't defined for the type '_StudentDetailsScreenState'. :236
+The name 'StudentState' isn't a type, so it can't be used as a type argument. :268
+The name 'StudentAttendanceLoaded' isn't defined, so it can't be used in an 'is' expression. :270
+The method 'AttendanceCard' isn't defined for the type '_StudentDetailsScreenState'. :290
+* The name 'StudentState' isn't a type, so it can't be used as a type argument. :317
+• The name 'StudentProgressLoaded' isn't defined, so it can't be used in an 'is' expression. :319
+• The method 'ProgressCard' isn't defined for the type '_StudentDetailsScreenState'. :341
+The name 'StudentState' isn't a type, so it can't be used as a type argument. :353
+• The name 'StudentAttendanceLoaded' isn't defined, so it can't be used in an 'is' expression. :355
+• The method 'AttendanceCard' isn't defined for the type '.
+_StudentDetailsScreenState. :3//
+• The getter 'fullName' isn't defined for the type 'StudentModel. :392
